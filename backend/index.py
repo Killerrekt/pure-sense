@@ -4,6 +4,7 @@ from backend.models.user import USER,login,concern
 import bcrypt
 from email_validator import validate_email,EmailNotValidError
 import time
+from fastapi.middleware.cors import CORSMiddleware
 
 #client = pymongo.MongoClient("mongodb+srv://amankhanter14:140604@skillissue.cqzcm8a.mongodb.net/")
 
@@ -25,6 +26,15 @@ user = DB["users"]
 complaints = DB["complaints"]
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.post("/signup")
 async def create_user(data : USER):
