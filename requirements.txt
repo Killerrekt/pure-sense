@@ -1,0 +1,4 @@
+fastapi[all]
+pymongo
+bcrypt
+email_validator
