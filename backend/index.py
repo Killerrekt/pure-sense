@@ -1,12 +1,12 @@
 import pymongo
 from fastapi import FastAPI,Response,Depends,Cookie
-from models.user import USER,login,concern
+from backend.models.user import USER,login,concern
 import bcrypt
 from email_validator import validate_email,EmailNotValidError
 from typing import Annotated
 import time
 
-client = pymongo.MongoClient("mongodb://localhost:27017/MUJ")
+client = pymongo.MongoClient("mongodb+srv://amankhanter14:140604@skillissue.cqzcm8a.mongodb.net/")
 DB = client["MUJhacks"]
 user = DB["users"]
 complaints = DB["complaints"]
