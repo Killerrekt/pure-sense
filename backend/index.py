@@ -3,7 +3,6 @@ from fastapi import FastAPI,Response,Depends,Cookie
 from backend.models.user import USER,login,concern
 import bcrypt
 from email_validator import validate_email,EmailNotValidError
-from typing import Annotated
 import time
 
 client = pymongo.MongoClient("mongodb+srv://amankhanter14:140604@skillissue.cqzcm8a.mongodb.net/")
